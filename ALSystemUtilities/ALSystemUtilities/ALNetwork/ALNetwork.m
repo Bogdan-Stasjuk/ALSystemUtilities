@@ -10,7 +10,7 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-#import "Reachability.h"
+#import "ALReachability.h"
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 #include <net/if.h>
@@ -83,7 +83,7 @@
 }
 
 + (BOOL)connectedViaWiFi {
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    ALReachability *reachability = [ALReachability reachabilityForInternetConnection];
     [reachability startNotifier];
     NetworkStatus status = [reachability currentReachabilityStatus];
     if (status == ReachableViaWiFi)
@@ -93,7 +93,7 @@
 }
 
 + (BOOL)connectedVia3G {
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    ALReachability *reachability = [ALReachability reachabilityForInternetConnection];
     [reachability startNotifier];
     NetworkStatus status = [reachability currentReachabilityStatus];
     if (status == ReachableViaWWAN)
