@@ -8,6 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef NS_ENUM(UInt8, ALPlatformType) {
+  ALPlatformTypeUndef,
+  ALPlatformTypeSimulator,
+  ALPlatformTypeiPodTouch3,
+  ALPlatformTypeiPodTouch4,
+  ALPlatformTypeiPodTouch5,
+  ALPlatformTypeiPhone3Gs,
+  ALPlatformTypeiPhone4,
+  ALPlatformTypeiPhone4s,
+  ALPlatformTypeiPhone5,
+  ALPlatformTypeiPad2,
+  ALPlatformTypeiPad3,
+  ALPlatformTypeiPad4,
+  ALPlatformTypeiPadAir,
+  ALPlatformTypeiPadAir2,
+  ALPlatformTypeiPadMini,
+  ALPlatformTypeiPadMiniRetina,
+  ALPlatformTypeiPhone5s,
+  ALPlatformTypeiPhone5c,
+  ALPlatformTypeiPhone6,
+  ALPlatformTypeiPhone6Plus,
+};
+
+
 /*!
  * This class check some hardware (and software) informations
  */
@@ -60,6 +85,12 @@
  @return NSString represents the platform type (ex. : iPhone 5)
  */
 + (NSString *)platformType;
+
+/*!
+ Get the device type
+ @return ALPlatformType enum's value represents the platform type (ex. : ALPlatformTypeiPhone5)
+ */
++ (ALPlatformType)platformTypeID;
 
 /*!
  Get the boot time in hours, minutes and seconds
