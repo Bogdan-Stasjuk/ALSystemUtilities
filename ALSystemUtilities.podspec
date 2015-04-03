@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.frameworks    =  'AudioToolbox','CFNetwork','CoreTelephony','ExternalAccessory','Security','SystemConfiguration','CoreGraphics','CoreFoundation','Foundation'
   
-  non_arc_files = 'ALSystemUtilities/ALSystemUtilities/Reachability/Reachability.h','ALSystemUtilities/ALSystemUtilities/Reachability/Reachability.m'
+  non_arc_files = 'ALSystemUtilities/ALSystemUtilities/Reachability/Reachability.h','ALSystemUtilities/ALSystemUtilities/Reachability/ALReachability.m'
   s.exclude_files = non_arc_files
   s.subspec 'no-arc' do |sna|
     sna.requires_arc = false
